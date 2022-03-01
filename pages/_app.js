@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import styles from '../styles/Home.module.scss';
 import Link from 'next/link';
 import { QueryClientProvider, QueryClient } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 const queryClient = new QueryClient();
 
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }) {
         <Link href={'/rq-super-heroes'}>RQ Super Heroes</Link>
       </nav>
       <Component {...pageProps} />
+      <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
     </QueryClientProvider>
   );
 }
