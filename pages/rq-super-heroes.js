@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useSuperHeroesData } from '../hooks/useSuperHeroesData';
 
 export default function RQSuperHeroes() {
@@ -28,9 +29,16 @@ export default function RQSuperHeroes() {
     <div>
       <h2>RQ Super Heroes Page</h2>
       <button onClick={refetch}>Fetch heroes</button>
-      {data.map((heroName) => {
+      {data?.data.map((hero) => (
+        <div key={hero.name}>
+          <Link href={`/rq-super-hero/${hero.id}`} passHref>
+            <button>{hero.name}</button>
+          </Link>
+        </div>
+      ))}
+      {/* {data.map((heroName) => {
         return <div key={heroName}>{heroName}</div>;
-      })}
+      })} */}
     </div>
   );
 }

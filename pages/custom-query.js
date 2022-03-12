@@ -21,9 +21,12 @@ export default function CustomQuery() {
   return (
     <div>
       <h2>Custom Query Super Heroes Page</h2>
-      {data.map((heroName) => {
+      {data?.data.map((hero) => (
+        <div key={hero.name}>{hero.name}</div>
+      ))}
+      {/* {data.map((heroName) => {
         return <div key={heroName}>{heroName}</div>;
-      })}
+      })} */}
     </div>
   );
 }

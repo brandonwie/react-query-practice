@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }) {
         <Link href={'/super-heroes'}>Traditional Super Heroes</Link>
         <Link href={'/rq-super-heroes'}>RQ Super Heroes</Link>
         <Link href={'/custom-query'}>Custom Query Heroes</Link>
+        <Link href={'/rq-super-hero'}>RQ Super Hero</Link>
       </nav>
       <Component {...pageProps} />
       <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
