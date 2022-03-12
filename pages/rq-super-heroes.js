@@ -1,9 +1,5 @@
-import { useQuery } from 'react-query';
-import axios from 'axios';
+import { useSuperHeroesData } from '../hooks/useSuperHeroesData';
 
-const fetchSuperHeroes = async () => {
-  return await axios.get('http://localhost:4000/superheroes');
-};
 export default function RQSuperHeroes() {
   const onSuccess = (data) => {
     console.log('Perform side effect after data fetching', data);
@@ -12,21 +8,13 @@ export default function RQSuperHeroes() {
     console.log('Perform side effect after error', err);
   };
   // at least two arguments, unique key, a function that returns a promise
-  const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
-    'super-heroes',
-    fetchSuperHeroes,
-    {
-      onSuccess,
-      onError, // run after 3 times error happens
-      // This option can be used to transform or select a part of the data returned by the query function.
-      select: (data) => {
-        const superHeroNames = data.data.map((hero) => hero.name);
-        return superHeroNames;
-      },
-    }
-  );
+  const { isLoading, data, isError, error, isFetching, refetch } =
+    useSuperHeroesData(onSuccess, onError);
 
-  console.log({ isLoading, isFetching });
+  console.log({
+    isLoading,
+    isFetching,
+  });
 
   if (isLoading || isFetching) {
     return <h2>Loading...</h2>;
