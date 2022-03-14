@@ -8,5 +8,7 @@
     { "id": 1, "name": "Chandler Bing" },
     { "id": 2, "name": "Joey Tribbiani" },
     { "id": 3, "name": "Rachel Green" }
-  ]
+  ],
+  "users": [{ "id": "brandonwie.cs@gmail.com", "channelId": "brandonwie" }],
+  "channels": [{ "id": "brandonwie", "courses": ["react", "angular", "vue"] }]
 }
