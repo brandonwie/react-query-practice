@@ -15,6 +15,8 @@ function MyApp({ Component, pageProps }) {
         <Link href={'/rq-super-heroes'}>RQ Super Heroes</Link>
         <Link href={'/custom-query'}>Custom Query Heroes</Link>
         <Link href={'/rq-super-hero'}>RQ Super Hero</Link>
+        <Link href={'/rq-parallel'}>RQ Parallel Queries</Link>
+        <Link href={'/rq-dynamic'}>RQ Dynamic Queries</Link>
       </nav>
       <Component {...pageProps} />
       <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
