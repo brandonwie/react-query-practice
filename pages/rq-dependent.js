@@ -8,6 +8,7 @@ const fetchCoursesByChannelId = async (channelId) => {
   return await axios.get(`http://localhost:4000/channels/${channelId}`);
 };
 
+// using enabled option to make query dependent
 export default function DependentQueries({
   email = 'brandonwie.cs@gmail.com',
 }) {
