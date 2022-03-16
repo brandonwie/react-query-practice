@@ -14,10 +14,11 @@ function MyApp({ Component, pageProps }) {
         <Link href={'/super-heroes'}>Traditional Super Heroes</Link>
         <Link href={'/rq-super-heroes'}>RQ Super Heroes</Link>
         <Link href={'/custom-query'}>Custom Query Heroes</Link>
-        <Link href={'/rq-super-hero'}>RQ Super Hero</Link>
-        <Link href={'/rq-parallel'}>RQ Parallel Queries</Link>
-        <Link href={'/rq-dynamic'}>RQ Dynamic Queries</Link>
-        <Link href={'/rq-dependent'}>RQ Dependent Queries</Link>
+        <Link href={'/rq-super-hero'}>Super Hero</Link>
+        <Link href={'/rq-parallel'}>Parallel Queries</Link>
+        <Link href={'/rq-dynamic'}>Dynamic Queries</Link>
+        <Link href={'/rq-dependent'}>Dependent Queries</Link>
+        <Link href={'/rq-paginated'}>Paginated</Link>
       </nav>
       <Component {...pageProps} />
       <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
