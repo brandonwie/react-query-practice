@@ -10,5 +10,11 @@
     { "id": 3, "name": "Rachel Green" }
   ],
   "users": [{ "id": "brandonwie.cs@gmail.com", "channelId": "brandonwie" }],
-  "channels": [{ "id": "brandonwie", "courses": ["react", "angular", "vue"] }]
+  "channels": [{ "id": "brandonwie", "courses": ["react", "angular", "vue"] }],
+  "colors": [
+    { "id": 1, "label": "red" },
+    { "id": 2, "label": "blue" },
+    { "id": 3, "label": "green" },
+    { "id": 4, "label": "yellow" }
+  ]
 }

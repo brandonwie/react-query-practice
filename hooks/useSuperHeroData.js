@@ -16,6 +16,7 @@ export const useSuperHeroData = (heroId) => {
         ?.data?.find((hero) => hero.id === parseInt(heroId));
 
       if (hero) {
+        console.log('hero exist');
         return {
           data: hero, // structure is important
         };
