@@ -21,19 +21,14 @@
       "id": 4
     },
     {
-      "name": "123",
-      "alterEgo": "asd",
+      "name": "Shazam",
+      "alterEgo": "Billy Batson",
       "id": 5
     },
     {
-      "name": "111",
-      "alterEgo": "asdasd",
+      "name": "Catwoman",
+      "alterEgo": "Selina Kyle",
       "id": 6
-    },
-    {
-      "name": "Shazam",
-      "alterEgo": "Billy Batson",
-      "id": 7
     }
   ],
   "friends": [
