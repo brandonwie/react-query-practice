@@ -34,16 +34,27 @@ export function useAddSuperHeroData() {
     //   });
     // },
     onMutate: async (newHero) => {
-      await queryClient.cancelQueries('super-heroes');
-      const previousHeroData = queryClient.getQueryData('super-heroes');
-      queryClient.setQueryData('super-heroes', (oldQueryData) => {
+      // it's called before the mutation function is fired and is passed the same variables the mutation function receive
+      await queryClient.cancelQueries('super-heroes'); // not to overwrite our optimistic update
+      const previousHeroData = queryClient.getQueryData('super-heroes'); // need to get hold of the current query data before we update it - help us to roll back if mutation fails
+      queryClient.setQueryData('super-heroes', (prevData) => {
         return {
-          ...oldQueryData,
-          data: [...oldQueryData.data, data.data],
+          ...prevData,
+          data: [
+            ...prevData.data,
+            { id: prevData?.data?.length + 1, ...newHero },
+          ],
         };
       });
+      return { previousHeroData };
     },
-    onError: () => {},
-    onSettled: () => {},
+    // called if the mutation fails
+    onError: (_error, _hero, context) => {
+      queryClient.setQueryData('super-heroes', context.previousHeroData);
+    },
+    onSettled: () => {
+      // called either on success or on error
+      queryClient.invalidateQueries('super-heroes');
+    },
   });
 }
